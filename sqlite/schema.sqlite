@@ -1,0 +1,37 @@
+CREATE TABLE "tweet" (
+    "id" INTEGER PRIMARY KEY NOT NULL,
+    "createdAt" INTEGER NOT NULL,
+    "text" TEXT NOT NULL,
+    "isRetweet" INTEGER NOT NULL,
+    "lang" TEXT NOT NULL,
+    "userId" INTEGER NOT NULL,
+    "inReplyToUser" INTEGER,
+    "inReplyToStatus" INTEGER
+);
+CREATE TABLE "user" (
+    "id" INTEGER PRIMARY KEY NOT NULL,
+    "screenName" TEXT NOT NULL,
+    "location" TEXT,
+    "profileImage" TEXT NOT NULL,
+    "createdAt" INTEGER NOT NULL,
+    "isVerified" INTEGER NOT NULL,
+    "hasDefaultProfileTheme" INTEGER NOT NULL,
+    "hasDefaultProfileImage" INTEGER NOT NULL
+);
+CREATE TABLE "tag" (
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    "text" TEXT NOT NULL
+);
+CREATE TABLE sqlite_sequence(name,seq);
+CREATE TABLE "url" (
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    "url" TEXT NOT NULL
+);
+CREATE TABLE "tags_to_tweets" (
+    "tagId" INTEGER NOT NULL,
+    "tweetId" INTEGER NOT NULL
+);
+CREATE TABLE "urls_to_tweets" (
+    "urlId" INTEGER NOT NULL,
+    "tweetId" INTEGER NOT NULL
+);

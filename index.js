@@ -1,25 +1,12 @@
 /* eslint-env */
 "use strict";
 
-const DEFAULT_CONFIG = {
-  debug: false,
-  format: "csv",
-  count: 100,
-  authPath: "./auth.json",
-};
-
-var TwitterInterface = require("./lib/TwitterInterface");
+var TwitterInterface = require("./lib/TwitterInterface"),
+	OptionsParser = require("./lib/OptionsParser.js");
 
 (function run(argv) {
-  var cli = new TwitterInterface(),
-    command = argv._[0],
-    authPath = argv.auth || DEFAULT_CONFIG.authPath,
-    auth = require(authPath);
-
-  cli.setAuth(auth);
-  cli.run(command, {
-    debug: argv.debug || DEFAULT_CONFIG.debug,
-    format: argv.format || DEFAULT_CONFIG.format,
-    count: argv.count || DEFAULT_CONFIG.count,
-  });
+  var options;
+  argv.dirname = __dirname;
+  options = OptionsParser.parse(argv);
+  TwitterInterface.run(options);
 }(require("optimist").argv));

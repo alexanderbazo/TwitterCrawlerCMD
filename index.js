@@ -2,7 +2,7 @@
 "use strict";
 
 var TwitterInterface = require("./lib/TwitterInterface"),
-	OptionsParser = require("./lib/OptionsParser.js");
+  OptionsParser = require("./lib/OptionsParser.js");
 
 (function run(argv) {
   var options;

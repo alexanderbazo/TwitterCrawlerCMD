@@ -36,6 +36,6 @@ Run `node index.js <COMMAND>`
 | `--auth` | Path to oauth file. If this option is ommitted, oauth information will be read from `auth.json` |
 
 
-### Licences and Agreements
+# Licences and Agreements
 
 The code in this repository is provide under [MIT license](License.md). No twitter content is stored in or published through this repository. Make sure that your usage of this software complies to [Twitters Developer Agreement](https://dev.twitter.com/overview/terms/agreement-and-policy). Other licences may be applied to dependcies use to run this software.

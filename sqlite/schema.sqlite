@@ -3,20 +3,44 @@ CREATE TABLE "tag" (
     "text" TEXT NOT NULL
 );
 CREATE TABLE sqlite_sequence(name,seq);
-CREATE TABLE "url" (
-    "id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-    "url" TEXT NOT NULL
-);
-CREATE TABLE tags_to_tweets (
-    "tagId" INTEGER NOT NULL,
-    "tweetId" INTEGER NOT NULL
-);
+CREATE TABLE tweet (
+    "id" INTEGER NOT NULL PRIMARY KEY,
+    "createdAt" INTEGER NOT NULL,
+    "insertedAt" INTEGER NOT NULL,
+    "text" TEXT NOT NULL,
+    "isRetweet" INTEGER NOT NULL,
+    "isQuote" INTEGER NOT NULL,
+    "retweetCount" INTEGER NOT NULL,
+    "favouriteCount" INTEGER NOT NULL,
+    "lang" TEXT NOT NULL NOT NULL,
+    "userId" INTEGER NOT NULL NOT NULL,
+    "inReplyToUser" INTEGER,
+    "inReplyToStatus" INTEGER,
+    "isSourceTweet" INTEGER NOT NULL,
+    "positveSentimentScore" INTEGER,
+    "negativeSentimentScore"INTEGER);
 CREATE TABLE urls_to_tweets (
     "urlId" INTEGER NOT NULL,
-    "tweetId" INTEGER NOT NULL
+    "tweetId" INTEGER NOT NULL,
+    PRIMARY KEY (urlId, tweetId)
 );
+;
+CREATE TABLE tags_to_tweets (
+    "tagId" INTEGER NOT NULL,
+    "tweetId" INTEGER NOT NULL,
+    PRIMARY KEY (tagId, tweetId)
+);
+;
+CREATE TABLE "sources_to_tweets" (
+    "sourceId" INTEGER,
+    "tweetId" INTEGER,
+    "sourceWasRetweeted" INTEGER,
+    "sourceWasQuoted" INTEGER,
+    PRIMARY KEY(sourceId, tweetId)
+);
+;
 CREATE TABLE user (
-    "id" INTEGER NOT NULL,
+    "id" INTEGER NOT NULL PRIMARY KEY,
     "screenName" TEXT NOT NULL,
     "location" TEXT,
     "profileImage" TEXT NOT NULL,
@@ -25,18 +49,9 @@ CREATE TABLE user (
     "hasDefaultProfileTheme" INTEGER NOT NULL,
     "hasDefaultProfileImage" INTEGER NOT NULL
 );
-CREATE TABLE "sources_to_tweets" (
-    "sourceId" INTEGER,
-    "tweetId" INTEGER
+CREATE TABLE "url" (
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    "url" TEXT NOT NULL,
+    "parsedAt" INTEGER,
+    "content" TEXT
 );
-CREATE TABLE tweet (
-    "id" INTEGER NOT NULL,
-    "createdAt" INTEGER NOT NULL,
-    "text" TEXT NOT NULL,
-    "isRetweet" INTEGER NOT NULL,
-    "lang" TEXT NOT NULL,
-    "userId" INTEGER NOT NULL,
-    "inReplyToUser" INTEGER,
-    "inReplyToStatus" INTEGER,
-    "isSourceTweet" INTEGER
-, "isQuote" INTEGER);

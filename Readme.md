@@ -4,7 +4,7 @@ This project aims to implement a cli wrapper for basic operations againts twitte
 
 ## Install
 
-Clone this repository and run `npm install` to install dependencies. Create a new database using the provided schema (`sqlite/schema.sqlite`).
+Clone this repository and run `npm install` to install dependencies. Create a new database using the provided schema (`sqlite/schema.sqlite`). If you have installed the sqlite cli tool this command should create the databse `sqlite3 DATABASENAME < sqlite/schema.sqlite`. 
 
 ## Config
 

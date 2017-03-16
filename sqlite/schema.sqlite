@@ -1,8 +1,3 @@
-CREATE TABLE "tag" (
-    "id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-    "text" TEXT NOT NULL
-);
-CREATE TABLE sqlite_sequence(name,seq);
 CREATE TABLE tweet (
     "id" INTEGER NOT NULL PRIMARY KEY,
     "createdAt" INTEGER NOT NULL,
@@ -53,5 +48,12 @@ CREATE TABLE "url" (
     "id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
     "url" TEXT NOT NULL,
     "parsedAt" INTEGER,
-    "content" TEXT
+    "content" TEXT,
+    UNIQUE("url")
 );
+CREATE TABLE "tag" (
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    "text" TEXT NOT NULL,
+    UNIQUE("text")
+);
+;

@@ -30,8 +30,8 @@ Run `node index.js <COMMAND>`
 | ------- | ----------- |
 | `--count` | Number of tweets to be retrieved |
 | `--sqlite` | Store retrieved tweets into a sqlite database. If not value is given, results are stored in `tweets.sqlite` |
-| `--sqlite` | Store retrieved tweets into a sqlite database. If not value is given, results are stored in `tweets.sqlite` |
 | `--html` | Resolves urls in tweets and stores html content in database. |
+| `--sentistrength` | Augment results with sentiment scores (See above: Sentiment Detection). |
 | `--auth` | Path to oauth file. If this option is ommitted, oauth information will be read from `auth.json` |
 
 

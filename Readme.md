@@ -1,6 +1,6 @@
 # Twitter Crawler CLI
 
-This project aims to implement a cli wrapper for basic operations againts twitter's REST api. While JSON and CSV output is available, the main use case is the persitence of tweets into a database.
+This project aims to implement a cli wrapper for basic operations againts twitter's REST api. Results are store into an sqlite database.
 
 ## Install
 
@@ -29,10 +29,9 @@ Run `node index.js <COMMAND>`
 | Options | Description |
 | ------- | ----------- |
 | `--count` | Number of tweets to be retrieved |
-| `--csv` | Save retrieved tweets to a csv file. If not value is given, results are stored in `results.csv` |
-| `--json` | Save retrieved tweets as individual json files. If not value is given, results are stored in a subfolder named `results-json` |
 | `--sqlite` | Store retrieved tweets into a sqlite database. If not value is given, results are stored in `tweets.sqlite` |
-| `--sentistrength` | Augment results with sentiment scores (See above: *Sentiment Detection*). |
+| `--sqlite` | Store retrieved tweets into a sqlite database. If not value is given, results are stored in `tweets.sqlite` |
+| `--html` | Resolves urls in tweets and stores html content in database. |
 | `--auth` | Path to oauth file. If this option is ommitted, oauth information will be read from `auth.json` |
 
 

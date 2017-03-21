@@ -23,6 +23,7 @@ Run `node index.js <COMMAND>`
 | Command | Description |
 | ------- | ----------- |
 | `timeline` | Retrieve your current home timeline |
+| `user $USER` | Retrieve the timeline from the user whose twitter screenname is $USER |
 
 ### Options
 

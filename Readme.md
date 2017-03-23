@@ -23,7 +23,8 @@ Run `node index.js <COMMAND>`
 | Command | Description |
 | ------- | ----------- |
 | `timeline` | Retrieve your current home timeline |
-| `user $USER` | Retrieve the timeline from the user whose twitter screenname is $USER |
+| `user $USER` | Retrieve the timeline from the user whose twitter screenname is `$USER` |
+| `import $USER_DATA` | Update meta information in user table. Can only be used with the `sqlite` option. `$USER_DATA` must point to an json formatted file with an array user objects containing `screen_name`, `party` and `origin` properties. |
 
 ### Options
 
